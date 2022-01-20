@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AC36838279890040087F57E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC36837279890040087F57E /* DetailViewModel.swift */; };
+		7AC3683A2798BA7C0087F57E /* GifIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC368392798BA7C0087F57E /* GifIDResponse.swift */; };
+		7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */; };
+		7AE9B00C2796D28000529118 /* GifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9B00B2796D27F00529118 /* GifViewModel.swift */; };
 		9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A829F01277D7CF7002C03F2 /* APIListResponse.swift */; };
 		FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B425EECD340029E28F /* AppDelegate.swift */; };
 		FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B625EECD340029E28F /* SceneDelegate.swift */; };
 		FF9415BB25EECD350029E28F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9415BA25EECD350029E28F /* Assets.xcassets */; };
 		FF9415BE25EECD350029E28F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF9415BD25EECD350029E28F /* Preview Assets.xcassets */; };
 		FF9415C125EECD350029E28F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9415BF25EECD350029E28F /* LaunchScreen.storyboard */; };
-		FF9415CB25EED1360029E28F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415CA25EED1360029E28F /* MainViewController.swift */; };
+		FF9415CB25EED1360029E28F /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415CA25EED1360029E28F /* GifViewController.swift */; };
 		FF9415CF25EED15B0029E28F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF9415CE25EED15B0029E28F /* SnapKit */; };
 		FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415D125EED2590029E28F /* DetailViewController.swift */; };
 		FF9415D525EED60B0029E28F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415D425EED60B0029E28F /* Constants.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7AC36837279890040087F57E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		7AC368392798BA7C0087F57E /* GifIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifIDResponse.swift; sourceTree = "<group>"; };
+		7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7AE9B00B2796D27F00529118 /* GifViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewModel.swift; sourceTree = "<group>"; };
 		9A829F01277D7CF7002C03F2 /* APIListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIListResponse.swift; sourceTree = "<group>"; };
 		FF9415B125EECD340029E28F /* Dispo Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispo Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9415B425EECD340029E28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +40,7 @@
 		FF9415BD25EECD350029E28F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FF9415C025EECD350029E28F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF9415C225EECD350029E28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF9415CA25EED1360029E28F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FF9415CA25EED1360029E28F /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		FF9415D125EED2590029E28F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FF9415D425EED60B0029E28F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FF9415E125EEDC3A0029E28F /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
@@ -53,6 +61,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AC3683B2798BECF0087F57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF9415CA25EED1360029E28F /* GifViewController.swift */,
+				7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AC3683C2798BEDA0087F57E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AE9B00B2796D27F00529118 /* GifViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AE9B0072796451A00529118 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AC36837279890040087F57E /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7AE9B00D2796E89E00529118 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF9415D125EED2590029E28F /* DetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FF9415A825EECD340029E28F = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +115,8 @@
 			children = (
 				FF9415B425EECD340029E28F /* AppDelegate.swift */,
 				FF9415B625EECD340029E28F /* SceneDelegate.swift */,
-				FF9415E825EEEA4C0029E28F /* Main */,
 				FF9415EA25EEEA510029E28F /* Detail */,
+				FF9415E825EEEA4C0029E28F /* Main */,
 				FF9415EC25EEEA560029E28F /* Util */,
 				FF9415BA25EECD350029E28F /* Assets.xcassets */,
 				FF9415BF25EECD350029E28F /* LaunchScreen.storyboard */,
@@ -96,7 +137,8 @@
 		FF9415E825EEEA4C0029E28F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FF9415CA25EED1360029E28F /* MainViewController.swift */,
+				7AC3683B2798BECF0087F57E /* View */,
+				7AC3683C2798BEDA0087F57E /* ViewModel */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -104,7 +146,8 @@
 		FF9415EA25EEEA510029E28F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				FF9415D125EED2590029E28F /* DetailViewController.swift */,
+				7AE9B00D2796E89E00529118 /* View */,
+				7AE9B0072796451A00529118 /* ViewModel */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -117,6 +160,7 @@
 				FF9415E125EEDC3A0029E28F /* SearchResult.swift */,
 				FF9415E525EEDF380029E28F /* GifApiClient.swift */,
 				9A829F01277D7CF7002C03F2 /* APIListResponse.swift */,
+				7AC368392798BA7C0087F57E /* GifIDResponse.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -203,11 +247,15 @@
 				FF9415E625EEDF380029E28F /* GifApiClient.swift in Sources */,
 				FF9415D525EED60B0029E28F /* Constants.swift in Sources */,
 				FF9415E225EEDC3A0029E28F /* SearchResult.swift in Sources */,
-				FF9415CB25EED1360029E28F /* MainViewController.swift in Sources */,
+				FF9415CB25EED1360029E28F /* GifViewController.swift in Sources */,
+				7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
+				7AE9B00C2796D28000529118 /* GifViewModel.swift in Sources */,
 				FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */,
 				FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */,
 				FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */,
+				7AC3683A2798BA7C0087F57E /* GifIDResponse.swift in Sources */,
 				9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */,
+				7AC36838279890040087F57E /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,17 +394,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dispo Take Home/Preview Content\"";
-				DEVELOPMENT_TEAM = XTR8CJ799H;
+				DEVELOPMENT_TEAM = B7YZ3RD865;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dispo Take Home/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "takehome.dispo.Dispo-Take-Home";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lima.takehome.dispo.Dispo-Take-Home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,17 +417,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Dispo Take Home/Preview Content\"";
-				DEVELOPMENT_TEAM = XTR8CJ799H;
+				DEVELOPMENT_TEAM = B7YZ3RD865;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Dispo Take Home/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "takehome.dispo.Dispo-Take-Home";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lima.takehome.dispo.Dispo-Take-Home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

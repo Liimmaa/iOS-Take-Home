@@ -1,7 +1,7 @@
 import UIKit
 
-struct SearchResult {
+struct SearchResult: Codable {
   var id: String
-  var gifUrl: URL
+  var url: URL
   var title: String
 }
