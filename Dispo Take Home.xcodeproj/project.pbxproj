@@ -11,6 +11,7 @@
 		7AC3683A2798BA7C0087F57E /* GifIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC368392798BA7C0087F57E /* GifIDResponse.swift */; };
 		7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */; };
 		7AE9B00C2796D28000529118 /* GifViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9B00B2796D27F00529118 /* GifViewModel.swift */; };
+		7AF406DE2799C3E1003DEAD7 /* ColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF406DD2799C3E0003DEAD7 /* ColorProvider.swift */; };
 		9A829F02277D7CF7002C03F2 /* APIListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A829F01277D7CF7002C03F2 /* APIListResponse.swift */; };
 		FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B425EECD340029E28F /* AppDelegate.swift */; };
 		FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9415B625EECD340029E28F /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		7AC368392798BA7C0087F57E /* GifIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifIDResponse.swift; sourceTree = "<group>"; };
 		7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
 		7AE9B00B2796D27F00529118 /* GifViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewModel.swift; sourceTree = "<group>"; };
+		7AF406DD2799C3E0003DEAD7 /* ColorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorProvider.swift; sourceTree = "<group>"; };
 		9A829F01277D7CF7002C03F2 /* APIListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIListResponse.swift; sourceTree = "<group>"; };
 		FF9415B125EECD340029E28F /* Dispo Take Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dispo Take Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF9415B425EECD340029E28F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				FF9415E525EEDF380029E28F /* GifApiClient.swift */,
 				9A829F01277D7CF7002C03F2 /* APIListResponse.swift */,
 				7AC368392798BA7C0087F57E /* GifIDResponse.swift */,
+				7AF406DD2799C3E0003DEAD7 /* ColorProvider.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				7AE9B00C2796D28000529118 /* GifViewModel.swift in Sources */,
 				FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */,
+				7AF406DE2799C3E1003DEAD7 /* ColorProvider.swift in Sources */,
 				FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */,
 				FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */,
 				7AC3683A2798BA7C0087F57E /* GifIDResponse.swift in Sources */,

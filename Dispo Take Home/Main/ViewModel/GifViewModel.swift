@@ -5,53 +5,32 @@
 //  Created by Chioma Amanda Mmegwa  on 18/01/2022.
 //
 
-// pass through protocols
-
 
 import Foundation
 import UIKit
+import KingfisherSwiftUI
 
-class GifViewModel {
-    
-    func getTrendingGif(completion: @escaping ((_ data: APIListResponse) -> Void)) {
-        let string = "https://api.giphy.com/v1/gifs/trending?api_key=\(Constants.giphyApiKey)&limit=50&rating=g"
-        guard let api = URL(string: string) else {return}
-        
-        URLSession.shared.dataTask(with: api) {
-            data, response, error in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(APIListResponse.self, from: data!)
-                completion(result)
-            } catch {
-                
-            }
-        }.resume()
-    }
-    
-    func getGifbySearch(completion: @escaping ((_ data: APIListResponse) -> Void), searchword: String) {
-        let urlString = "https://api.giphy.com/v1/gifs/search?api_key=\(Constants.giphyApiKey)&q=\(searchword)&limit=50&offset=0&rating=g&lang=en"
-        guard let api = URL(string: urlString) else {return}
-        
-        URLSession.shared.dataTask(with: api) {
-            data, response, error in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(APIListResponse
-                                                        .self, from: data!)
-                completion(result)
-            } catch {
-                
-            }
-        }.resume()
-    }
+protocol GetGifEvent: AnyObject {
+    func getGifs(_ data: [GifObject]) -> Void
 }
 
+final class GifViewModel {
+    var apiClient = GifAPIClient()
+    weak var delegate: GetGifEvent?
+    
+    func getTrendingGif() {
+        apiClient.getRequest(params: [Constants.rating: Constants.pg], gifType: Constants.trending) { [weak self] (result: APIListResponse) in
+            self?.delegate?.getGifs(result.data)
+        }
+    }
+    
+    func getGifbySearch(completion: @escaping ((_ data: [GifObject]) -> Void), searchword: String) {
+        apiClient.getRequest(params: [Constants.searchword : searchword], gifType: Constants.search) { [weak self] (result: APIListResponse) in
+            self?.delegate?.getGifs(result.data)
+        }
+    }
+    
+    init(delegate: GetGifEvent) {
+        self.delegate = delegate
+    }
+}

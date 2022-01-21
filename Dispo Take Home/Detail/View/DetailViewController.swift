@@ -2,10 +2,9 @@ import UIKit
 import Kingfisher
 
 final class DetailViewController: UIViewController {
-    
-    let viewModel = DetailViewModel()
-    var giphyData: GifObject?
-    var id: String?
+    var viewModel: DetailViewModel?
+    var gifList: GifObject?
+    var id: String
     
     init(id: String) {
         self.id = id
@@ -18,9 +17,9 @@ final class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
-        fetchGif()
-        view.backgroundColor = .systemBackground
+        setupUI()
+        viewModel = DetailViewModel(delegate: self)
+        viewModel?.getDetailsById(id: id)
     }
     
     lazy var containerView: UIView = {
@@ -76,14 +75,16 @@ final class DetailViewController: UIViewController {
         return stackView
     }()
     
-    func configureUI(url: URL, title: String, source: String, ratings: String) {
+    private func configureUI(url: URL, title: String, source: String, ratings: String) {
         self.photoView.kf.setImage(with: url)
-        self.titleLabel.text = title
-        self.sourceLabel.text = source
-        self.ratingsLabel.text = ratings
+        self.titleLabel.text = "Title: \(title)"
+        self.sourceLabel.text = "Source: \(source)"
+        self.ratingsLabel.text = "Ratings: \(ratings)"
+        
+        view.backgroundColor = .systemBackground
     }
     
-    func configureUI() {
+    private func setupUI() {
         view.addSubview(vStack)
         
         vStack.snp.makeConstraints { (make) in
@@ -91,23 +92,29 @@ final class DetailViewController: UIViewController {
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
         }
-    }
-    
-    func fetchGif() {
-        viewModel.getDetailsById(completion: { result in
-            self.giphyData = result.data
-            guard let url = self.giphyData?.images.fixed_height.url, let title = self.giphyData?.title, let source = self.giphyData?.source_tld, let ratings = self.giphyData?.rating else  {return}
-            
-            DispatchQueue.main.async {
-                self.configureUI(url: url, title: title, source: source, ratings: ratings)
-            }
-        }, id: self.id ?? String())
+    }    
+}
+
+extension DetailViewController: GetGifDetailsEvent {
+    func getGif(_ data: GifIDResponse) {
+        self.gifList = data.data
+        guard let url = self.gifList?.images.fixed_height.url,
+              let title = self.gifList?.title,
+              let source = self.gifList?.source_tld,
+              let ratings = self.gifList?.rating else  {return}
+        
+        DispatchQueue.main.async {
+            self.configureUI(url: url,
+                             title: title,
+                             source: source,
+                             ratings: ratings)
+        }
     }
 }
 
 extension DetailViewController {
     static func launch(_ caller: UIViewController, id: String) {
         let vc = DetailViewController(id:id)
-        caller.navigationController?.pushViewController(vc, animated: true)
+        caller.navigationController?.pushViewController(vc, animated: false)
     }
 }

@@ -7,25 +7,21 @@
 
 import Foundation
 
+protocol GetGifDetailsEvent: AnyObject {
+    func getGif(_ gifDetail: GifIDResponse) -> Void
+}
+
 final class DetailViewModel {
+    var apiClient = GifAPIClient()
+    weak var delegate: GetGifDetailsEvent?
     
-    func getDetailsById(completion: @escaping ((_ data: GifIDResponse) -> Void), id: String) {
-        let urlString = "https://api.giphy.com/v1/gifs/\(id)?api_key=iERXBlD2YDoyY6bedNw94zDpJfE4m6X6"
-        guard let api = URL(string: urlString) else {return}
-        
-        URLSession.shared.dataTask(with: api) {
-            data, response, error in
-            
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            do {
-                let result = try JSONDecoder().decode(GifIDResponse.self, from: data!)
-                completion(result)
-            } catch {
-                
-            }
-        }.resume()
+    func getDetailsById(id: String) {
+        apiClient.getRequest(gifType: id) { [weak self] (result: GifIDResponse) in
+            self?.delegate?.getGif(result)
+        }
+    }
+    
+    init(delegate: GetGifDetailsEvent) {
+        self.delegate = delegate
     }
 }

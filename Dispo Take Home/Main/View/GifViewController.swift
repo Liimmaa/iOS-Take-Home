@@ -3,12 +3,8 @@ import SnapKit
 import Kingfisher
 
 final class GifViewController: UIViewController {
-    
-    private let viewModel = GifViewModel()
-    private var gifList: APIListResponse? // change variable name
-    //change name of colors
-    //change to constants file
-    private let colors: [UIColor] = [.systemPink, .systemBlue, .systemGreen, .systemOrange, .systemPurple]
+    private var viewModel: GifViewModel?
+    private var gifList: [GifObject]?
     
     private var collectionView: UICollectionView!
     
@@ -22,7 +18,8 @@ final class GifViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchTrendingGif()
+        viewModel = GifViewModel(delegate: self)
+        viewModel?.getTrendingGif()
     }
     
     private func setupCollectionView() {
@@ -47,19 +44,10 @@ final class GifViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = .systemPurple
         view.backgroundColor = .systemBackground
     }
-    
-    private func fetchTrendingGif() {
-        viewModel.getTrendingGif(completion: { result in
-            DispatchQueue.main.async {
-                self.gifList = result
-                self.collectionView.reloadData()
-            }
-        })
-    }
 }
 
 extension GifViewController {
-    func createLayout() -> UICollectionViewCompositionalLayout {
+    private func createLayout() -> UICollectionViewCompositionalLayout {
         // Item
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
@@ -128,12 +116,12 @@ extension GifViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: implement
         if searchText.isEmpty {
-            self.fetchTrendingGif()
+            viewModel?.getTrendingGif()
         } else {
             gifList = nil
             self.collectionView.reloadData()
             
-            viewModel.getGifbySearch(completion: { result in
+            viewModel?.getGifbySearch(completion: { result in
                 DispatchQueue.main.async {
                     self.gifList = result
                     self.collectionView.reloadData()
@@ -144,23 +132,33 @@ extension GifViewController: UISearchBarDelegate {
 }
 
 extension GifViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gifList?.data.count ?? Int()
+        return gifList?.count ?? Int()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: Constants.identifier, for: indexPath) as? PhotoLibraryCollectionViewCell
-        if let url = gifList?.data[indexPath.row].images.fixed_height.url {
-            cell?.backgroundColor = self.colors[indexPath.row % self.colors.count]
+        if let url = gifList?[indexPath.row].images.fixed_height.url {
+            cell?.backgroundColor = ColorProvider().getColorByIndex(indexPath: indexPath)
             cell?.imageView.kf.setImage(with: url)
         }
         return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let id = gifList?.data[indexPath.row].id {
+        if let id = gifList?[indexPath.row].id {
             DetailViewController.launch(self, id: id)
+        }
+    }
+}
+
+extension GifViewController: GetGifEvent {
+    func getGifs(_ data: [GifObject]) {
+        DispatchQueue.main.async {
+            self.gifList = data
+            self.collectionView.reloadData()
         }
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct GifIDResponse: Codable {
+struct GifIDResponse: Codable { //Replace is id viewmodel
     let data: GifObject
 }
