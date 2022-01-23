@@ -7,8 +7,6 @@
 
 
 import Foundation
-import UIKit
-import KingfisherSwiftUI
 
 protocol GetGifEvent: AnyObject {
     func getGifs(_ data: [GifObject]) -> Void
