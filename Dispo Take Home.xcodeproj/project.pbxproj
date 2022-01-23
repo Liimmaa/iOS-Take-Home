@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A21C9D5279DA2CC0091C48D /* GifViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21C9D4279DA2CC0091C48D /* GifViewModelTest.swift */; };
 		7AC36838279890040087F57E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC36837279890040087F57E /* DetailViewModel.swift */; };
 		7AC3683A2798BA7C0087F57E /* GifIDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC368392798BA7C0087F57E /* GifIDResponse.swift */; };
 		7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A21C9D4279DA2CC0091C48D /* GifViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewModelTest.swift; sourceTree = "<group>"; };
+		7A21CA12279E1C180091C48D /* Submission.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Submission.md; sourceTree = "<group>"; };
 		7AC36837279890040087F57E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		7AC368392798BA7C0087F57E /* GifIDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifIDResponse.swift; sourceTree = "<group>"; };
 		7AE9AFFE2795D25000529118 /* PhotoLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				7AE9B00B2796D27F00529118 /* GifViewModel.swift */,
+				7A21C9D4279DA2CC0091C48D /* GifViewModelTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -124,6 +128,7 @@
 				FF9415BF25EECD350029E28F /* LaunchScreen.storyboard */,
 				FF9415C225EECD350029E28F /* Info.plist */,
 				FF9415BC25EECD350029E28F /* Preview Content */,
+				7A21CA12279E1C180091C48D /* Submission.md */,
 			);
 			path = "Dispo Take Home";
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				7AE9AFFF2795D25000529118 /* PhotoLibraryCollectionViewCell.swift in Sources */,
 				7AE9B00C2796D28000529118 /* GifViewModel.swift in Sources */,
 				FF9415B525EECD340029E28F /* AppDelegate.swift in Sources */,
+				7A21C9D5279DA2CC0091C48D /* GifViewModelTest.swift in Sources */,
 				7AF406DE2799C3E1003DEAD7 /* ColorProvider.swift in Sources */,
 				FF9415B725EECD340029E28F /* SceneDelegate.swift in Sources */,
 				FF9415D225EED25A0029E28F /* DetailViewController.swift in Sources */,
