@@ -80,11 +80,10 @@ final class DetailViewController: UIViewController {
         self.titleLabel.text = "Title: \(title)"
         self.sourceLabel.text = "Source: \(source)"
         self.ratingsLabel.text = "Ratings: \(ratings)"
-        
-        view.backgroundColor = .systemBackground
     }
     
     private func setupUI() {
+        view.backgroundColor = .white
         view.addSubview(vStack)
         
         vStack.snp.makeConstraints { (make) in
@@ -115,6 +114,6 @@ extension DetailViewController: GetGifDetailsEvent {
 extension DetailViewController {
     static func launch(_ caller: UIViewController, id: String) {
         let vc = DetailViewController(id:id)
-        caller.navigationController?.pushViewController(vc, animated: false)
+        caller.navigationController?.pushViewController(vc, animated: true)
     }
 }
